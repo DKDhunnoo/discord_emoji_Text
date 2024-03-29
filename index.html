@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Discord Emoji Text</title>
+        <script>
+            function getData()
+            {
+                var finaltext = "";
+                txt = document.getElementById("data").value;
+                console.log(txt.value);
+
+                txt.toString().toLowerCase().split("").forEach(letter => {
+                    if(isAlphabet(letter))
+                    {
+                        finaltext += ":regional_indicator_" + letter + ": ";
+                    }
+                    else
+                    {
+                        finaltext += letter;
+                    }
+                });
+
+                document.getElementById("output").value = finaltext;
+            }
+
+            function isAlphabet(char) {
+            return char.length === 1 && /[a-zA-Z]/.test(char);
+}
+        </script>
+    </head>
+    
+    <body>
+        <h1>Discord Emoji Text</h1>
+        <form id="form1">
+            <label for="data">Enter text to convert:</label><br>
+            <input type="text" id="data" name="data"><br>
+            <input type="button" onclick="getData()" value="Convert">
+        </form>
+            <label for="output">Output:</label><br>
+            <input type="text" id="output">
+        </div>
+
+    </body>
+</html>
